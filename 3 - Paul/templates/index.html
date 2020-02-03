@@ -61,16 +61,46 @@
       <br>
 
       <h2> ML: predict dog-human relationship</h2>
-      <h3>Random Forest</h3>
-      <h3>Naive-Bayes</h3>
-      <h3>Neural nets</h3>
-      <h3>other ML models</h3>
-    </div>
-  </div>
+      <row>
+        <div class="col-md-1"> 
+          <h3>Role:</h3>
+        </div>
 
-  <!-- JS -->
-  <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <div class="col-md-11"> 
+          <div class = "btn-group">
+            <button type = "button" class = "btn btn-primary">Role</button>
+            <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
+              <span class = "caret"></span>
+              <span class = "sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class = "dropdown-menu" role = "menu">
+              <li><a href = "#">Masters</a></li>
+              <li><a href = "#">Bachelors</a></li>
+            </ul>
+          </div>
+        </div>
 
-</body>
-</html>
+      </row>
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <!-- JS -->
+      <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    </body>
+    </html>
