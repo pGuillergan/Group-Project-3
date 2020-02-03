@@ -17,11 +17,14 @@ def setup():
 def home():
     return render_template("index.html")
 
-@app.route("/ML")
+@app.route("/", methods = ['POST'])
 def dynamic_results():
+    have_dog = request.form['have_dog']
+    sample_type = request.form['sample_type']
+    human_role = request.form['human_role']
     # RandomForestRR(only_humans_with_dogs,sample_type,human_role)
-    return jsonify(Run_ML_Models("only_dog_owners","all","Partner"))
-    
+    return jsonify(Run_ML_Models(have_dog,sample_type,human_role))
+    #  return jsonify(Run_ML_Models("only_dog_owners","all","Partner"))   
 
 if __name__ == "__main__":
     app.run(debug=True)

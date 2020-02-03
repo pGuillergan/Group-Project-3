@@ -61,16 +61,100 @@
       <br>
 
       <h2> ML: predict dog-human relationship</h2>
-      <h3>Random Forest</h3>
-      <h3>Naive-Bayes</h3>
-      <h3>Neural nets</h3>
-      <h3>other ML models</h3>
-    </div>
-  </div>
+      <div class="jumbotron">
 
-  <!-- JS -->
-  <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <div class="container-fluid">
 
-</body>
-</html>
+          <!-- <form id="my_form"> -->
+          <form method="POST">
+            <div class="row justify-content-md-center question_margin">
+              <div class="col-3">
+                <p>Have Dog:</p>
+              </div>
+            </div>
+            <div class="row justify-content-md-center">
+              <div class="col-3">
+                <select class="form-control" id="have_dog" name="have_dog">
+                  <option selected="true" value="all">All</option>
+                  <option class="unselected" value="only_non_dog_owners">Only non dog owners</option>
+                  <option class="unselected" value="only_dog_owners">Only dog owners</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row justify-content-md-center question_margin">
+              <div class="col-3">
+                <p>Sample Type:</p>
+              </div>
+            </div>
+              <div class="row justify-content-md-center">
+                <div class="col-3">
+                  <select class="form-control" id="sample_type" name="sample_type">
+                    <option selected="true" value="all">All</option>
+                    <option class="unselected" value="skin">Skin</option>
+                    <option class="unselected" value="saliva">Saliva</option>
+                    <option class="unselected" value="stool">Stool</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row justify-content-md-center question_margin">
+                <div class="col-3">
+                  <p>Role:</p>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-3">
+                  <select id="human_role" name = "human_role" class="form-control" required>
+                    <option selected="true" value="all">All</option>
+                    <option value="Partner">Partner</option>
+                    <option value="Offspring">Offspring</option>
+                  </select>
+                </div>
+              </div>
+
+            <!-- <div class="row justify-content-md-center question_margin">
+              <div class="col-3">
+                <p>Sex:</p>
+              </div>
+            </div>
+            <div class="row justify-content-md-center">
+              <div class="col-3">
+                <select class="form-control" id="id_sex">
+                  <option selected="true" disabled="disabled" value="sex_all">All</option>
+                  <option class="unselected" value="same-sex couple">Male</option>
+                  <option value="different sex couple">Female</option>
+                  <option value="sex_not_provided">Not provided</option>
+                </select>
+              </div>
+            </div> -->
+
+            <br>
+
+            <div class="row justify-content-md-center">
+              <input class="btn btn-primary my-2" id="btn2" type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <!-- JS -->
+      <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    </body>
+    </html>
