@@ -7,10 +7,30 @@ body {
   background-image: url("../img/bac_back_copy.png");
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+.questionairre {
+    opacity: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 8px 0px 50px;
+    background-color: transparent;
+    /* border-radius: 50px */
+}
+
+.qtext {
+    color: black;
+    /*text-shadow: .5px .5px 15px black;*/
+}
+
+.question_margin {
+    padding: 20px 0px 0px 0px;
+    margin: 0px;
+}
+
+.row {
+    margin: 0px;
+}
+
+#human_role, #sample_type, #have_dog{
+ width:250px;   
 }
 
