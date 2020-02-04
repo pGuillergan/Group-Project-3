@@ -22,7 +22,7 @@ def dynamic_results():
     have_dog = request.form['have_dog']
     sample_type = request.form['sample_type']
     human_role = request.form['human_role']
-    # RandomForestRR(only_humans_with_dogs,sample_type,human_role)
+    # runs python file imported above (Run_ML_Models)
     return jsonify(Run_ML_Models(have_dog,sample_type,human_role))
     #  return jsonify(Run_ML_Models("only_dog_owners","all","Partner"))   
 
