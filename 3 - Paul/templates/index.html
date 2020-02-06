@@ -50,100 +50,113 @@
         <p><a class="btn btn-primary btn-lg" href="https://elifesciences.org/articles/00458" target="_blank" role="button">Learn more</a></p>
       </div>
 
-      <br>
       <hr>
-      <br>
       
-      <h2>Summary box/graph/table</h2>
-
-      <br>
-      <hr>
-      <br>
-
-      <h2> ML: predict dog-human relationship</h2>
       <div class="jumbotron">
+        <h2>Summary Visualization</h2>
 
-        <div class="container-fluid">
-         
-          <row>
-            <div class="col-md-6"> 
-              <form id="my_form">
-                <!-- <form method="POST"> -->
-                  <div class="row justify-content-md-center question_margin">
-                    <div class="col-3">
-                      <p>Have Dog:</p>
-                    </div>
-                  </div>
-                  <div class="row justify-content-md-center">
-                    <div class="col-3">
-                      <select class="form-control" id="have_dog" name="have_dog">
-                        <option selected="true" value="all">All</option>
-                        <option class="unselected" value="only_non_dog_owners">Only non dog owners</option>
-                        <option class="unselected" value="only_dog_owners">Only dog owners</option>
-                      </select>
-                    </div>
-                  </div>
+        <!-- @Karina, plotly stuff would be placed here -->
+        
+      </div>
+      
+      <hr>
 
-                  <div class="row justify-content-md-center question_margin">
-                    <div class="col-3">
-                      <p>Sample Type:</p>
-                    </div>
-                  </div>
-                  <div class="row justify-content-md-center">
-                    <div class="col-3">
-                      <select class="form-control" id="sample_type" name="sample_type">
-                        <option selected="true" value="all">All</option>
-                        <option class="unselected" value="skin">Skin</option>
-                        <option class="unselected" value="saliva">Saliva</option>
-                        <option class="unselected" value="stool">Stool</option>
-                      </select>
-                    </div>
-                  </div>
+      <div class="jumbotron">
+       <h2> ML: Predict Dog-Human Relationship</h2>
+       <hr>
+       <div class="container-fluid">
 
-                  <div class="row justify-content-md-center question_margin">
-                    <div class="col-3">
-                      <p>Role:</p>
-                    </div>
+        <row>
+          <div class="col-md-4"> 
+            <form id="my_form">
+              <!-- <form method="POST"> -->
+                <div class="row justify-content-md-center question_margin">
+                  <div class="col-3">
+                    <p>Have Dog:</p>
                   </div>
-                  <div class="row justify-content-md-center">
-                    <div class="col-3">
-                      <select id="human_role" name = "human_role" class="form-control" required>
-                        <option selected="true" value="all">All</option>
-                        <option value="Partner">Partner</option>
-                        <option value="Offspring">Offspring</option>
-                      </select>
-                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-3">
+                    <select class="form-control" id="have_dog" name="have_dog">
+                      <option selected="true" value="all">All</option>
+                      <option class="unselected" value="only_non_dog_owners">Only non dog owners</option>
+                      <option class="unselected" value="only_dog_owners">Only dog owners</option>
+                    </select>
                   </div>
+                </div>
 
-
-                  <br>
-
-                  <div class="row justify-content-md-center">
-                    <input class="btn btn-primary my-2" id="btn2" type="submit" value="Submit">
+                <div class="row justify-content-md-center question_margin">
+                  <div class="col-3">
+                    <p>Sample Type:</p>
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-3">
+                    <select class="form-control" id="sample_type" name="sample_type">
+                      <option selected="true" value="all">All</option>
+                      <option class="unselected" value="skin">Skin</option>
+                      <option class="unselected" value="saliva">Saliva</option>
+                      <option class="unselected" value="stool">Stool</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row justify-content-md-center question_margin">
+                  <div class="col-3">
+                    <p>Role:</p>
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-3">
+                    <select id="human_role" name = "human_role" class="form-control" required>
+                      <option selected="true" value="all">All</option>
+                      <option value="Partner">Partner</option>
+                      <option value="Offspring">Offspring</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <div class="row justify-content-md-center">
+                  <input class="btn btn-primary my-2" id="btn2" type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
 
-              <div class="col-md-6"> 
+            
+
+            <div class="col-md-8"> 
+              <div class="vl">
                 <div id="res_jumbo" style="display: none;">
                   <h2>Results</h2>
-                  <div id = "res_show"></div>        
+                  <hr>
+                  <div class="col-md-6"> 
+                    <h3>For Humans</h3>
+                    <hr>
+                    <div id = "res_show_human"></div>        
+                  </div>
+                  <div class="col-md-6"> 
+                    <div class="vl_s">
+                      <h3>For Dogs</h3>
+                      <hr>
+                      <div id = "res_show_dog"></div>        
+                    </div>
+                  </div>
                 </div>
               </div>
-              
-            </row>
-          </div>
+            </div>
+
+          </row>
         </div>
-
-        
-
-        
+      </div>
 
 
-        <!-- JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
-        <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
-      </body>
-      </html>
+
+
+
+      <!-- JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+      <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    </body>
+    </html>

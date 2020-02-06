@@ -1,8 +1,12 @@
 function show_results(data){
+	
+	// @Romina, you're gonna edit this block of code for dogs and humans
+	
 	var lr_str = '<h4>Logistic Regression: ' + data.logisticRegression +'</h4>'+'<br>'
 	var rf_str = '<h4>Random Forest: ' + data.randomForest +'</h4>'+'<br>'
 
-	document.getElementById("res_show").innerHTML=lr_str+rf_str;
+	document.getElementById("res_show_human").innerHTML=lr_str+rf_str;
+	document.getElementById("res_show_dog").innerHTML=lr_str+rf_str;
 	document.getElementById("res_jumbo").style.display = "block";
 };
 
