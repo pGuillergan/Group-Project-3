@@ -54,3 +54,8 @@ body {
 hr {
   border-top: 1px solid black;
 }
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
