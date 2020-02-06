@@ -16,6 +16,8 @@ var trace1 = {
   
   var layout = {
       barmode: 'group',
+      plot_bgcolor: 'rgba(0,0,0,0)',
+      paper_bgcolor: 'rgba(0,0,0,0)',
       xaxis: {
         title: "Sample Type",
       },
@@ -25,4 +27,4 @@ var trace1 = {
       title: 'Human vs Dog'
     };
   
-  Plotly.newPlot('myDiv_bar_DOGvHu', data, layout);
+  Plotly.newPlot('myDiv_2', data, layout);

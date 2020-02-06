@@ -26,7 +26,9 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
 
     var layout = {
         autosize: true,
-        height: 480,
+        height: 800,
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        paper_bgcolor: 'rgba(0,0,0,0)',
         scene: {
             aspectratio: {
                 x: 1,
@@ -67,9 +69,9 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
             }
         },
         title: 'PCA clustering',
-        width: 477
+        width: 900
     };
 
-    Plotly.newPlot('myDiv', data, layout);
+    Plotly.newPlot('myDiv_1', data, layout);
 
 });
