@@ -25,4 +25,4 @@ var trace1 = {
       title: 'Human with Dog'
     };
   
-  Plotly.newPlot('myDiv_3', data, layout);
+  Plotly.newPlot('myDiv', data, layout);

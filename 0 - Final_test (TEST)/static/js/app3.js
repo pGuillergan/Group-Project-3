@@ -25,4 +25,4 @@ var trace1 = {
       title: 'Human vs Dog'
     };
   
-  Plotly.newPlot('myDiv_2', data, layout);
+  Plotly.newPlot('myDiv_bar_DOGvHu', data, layout);

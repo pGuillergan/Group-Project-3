@@ -12,6 +12,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
         type: 'scatter3d',
         marker: {
           color: 'rgb(23, 190, 207)',
+        //   color: 'rgb(23, 190, 207)',
           size: 6
         }
     },{
@@ -69,6 +70,6 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
         width: 477
     };
 
-    Plotly.newPlot('myDiv_1', data, layout);
+    Plotly.newPlot('myDiv', data, layout);
 
 });
