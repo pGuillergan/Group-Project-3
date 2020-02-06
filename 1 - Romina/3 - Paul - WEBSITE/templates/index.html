@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Basic Map</title>
+  <title>POOC</title>
 
   <!-- <link rel="stylesheet" href="../css/reset.css"> -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
@@ -35,21 +35,25 @@
   <!-- ****************************** Nav Bar ****************************** -->
   <nav class="navbar">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <img src="../static/img/pooc_title_color.png" class="mx-auto d-block">
+      <div class="container justify-content-center text-center align-items-center qtext background">  
+        <div class="navbar-header">
+          <img src="../static/img/pooc_title_color.png" class="mx-auto d-block">
+        </div>
       </div>
     </div>
   </nav>
   <!-- ****************************** CONTAINERS ****************************** -->
   <div class="container top_marg">
-    <div class="row-fluid">
-
-      <div class="jumbotron">
-        <h2>A Review and Tutorial of Machine Learning Methods for Microbiome Host Trait Prediction</h2>
-        <p>With the growing importance of microbiome research, there is increasing evidence that host variation in microbial communities is associated with overall host health. Advancement in genetic sequencing methods for microbiomes has coincided with improvements in machine learning, with important implications for disease risk prediction in humans. One aspect specific to microbiome prediction is the use of taxonomy-informed feature selection. In this review for non-experts, we explore the most commonly used machine learning methods, and evaluate their prediction accuracy as applied to microbiome host trait prediction. Methods are described at an introductory level, and R/Python code for the analyses is provided.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <div class="container justify-content-center text-center align-items-center qtext background">
+      <div class="row-fluid">
+        <div class="container justify-content-center text-center align-items-center qtext background">
+          <div class="jumbotron">
+            <h2>Cohabiting family members share microbiota with one another and with their dogs</h2>
+            <p>Human-associated microbial communities vary across individuals: possible contributing factors include (genetic) relatedness, diet, and age. However, our surroundings, including individuals with whom we interact, also likely shape our microbial communities. To quantify this microbial exchange, we surveyed fecal, oral, and skin microbiota from 60 families (spousal units with children, dogs, both, or neither). Household members, particularly couples, shared more of their microbiota than individuals from different households, with stronger effects of co-habitation on skin than oral or fecal microbiota. Dog ownership significantly increased the shared skin microbiota in cohabiting adults, and dog-owning adults shared more ‘skin’ microbiota with their own dogs than with other dogs. Although the degree to which these shared microbes have a true niche on the human body, vs transient detection after direct contact, is unknown, these results suggest that direct and frequent contact with our cohabitants may significantly shape the composition of our microbial communities.</p>
+            <p><a class="btn btn-primary btn-lg" href="https://elifesciences.org/articles/00458" target="_blank" role="button">Learn more</a></p>
+          </div>
+        </div>
       </div>
-
       <br>
       <hr>
       <br>
@@ -64,97 +68,86 @@
       <div class="jumbotron">
 
         <div class="container-fluid">
+         
+          <row>
+            <div class="col-md-6"> 
+              <form id="my_form">
+                <!-- <form method="POST"> -->
+                  <div class="row justify-content-md-center question_margin">
+                    <div class="col-3">
+                      <p>Have Dog:</p>
+                    </div>
+                  </div>
+                  <div class="row justify-content-md-center">
+                    <div class="col-3">
+                      <select class="form-control" id="have_dog" name="have_dog">
+                        <option selected="true" value="all">All</option>
+                        <option class="unselected" value="only_non_dog_owners">Only non dog owners</option>
+                        <option class="unselected" value="only_dog_owners">Only dog owners</option>
+                      </select>
+                    </div>
+                  </div>
 
-          <!-- <form id="my_form"> -->
-          <form method="POST">
-            <div class="row justify-content-md-center question_margin">
-              <div class="col-3">
-                <p>Have Dog:</p>
-              </div>
-            </div>
-            <div class="row justify-content-md-center">
-              <div class="col-3">
-                <select class="form-control" id="have_dog" name="have_dog">
-                  <option selected="true" value="all">All</option>
-                  <option class="unselected" value="only_non_dog_owners">Only non dog owners</option>
-                  <option class="unselected" value="only_dog_owners">Only dog owners</option>
-                </select>
-              </div>
-            </div>
+                  <div class="row justify-content-md-center question_margin">
+                    <div class="col-3">
+                      <p>Sample Type:</p>
+                    </div>
+                  </div>
+                  <div class="row justify-content-md-center">
+                    <div class="col-3">
+                      <select class="form-control" id="sample_type" name="sample_type">
+                        <option selected="true" value="all">All</option>
+                        <option class="unselected" value="skin">Skin</option>
+                        <option class="unselected" value="saliva">Saliva</option>
+                        <option class="unselected" value="stool">Stool</option>
+                      </select>
+                    </div>
+                  </div>
 
-            <div class="row justify-content-md-center question_margin">
-              <div class="col-3">
-                <p>Sample Type:</p>
+                  <div class="row justify-content-md-center question_margin">
+                    <div class="col-3">
+                      <p>Role:</p>
+                    </div>
+                  </div>
+                  <div class="row justify-content-md-center">
+                    <div class="col-3">
+                      <select id="human_role" name = "human_role" class="form-control" required>
+                        <option selected="true" value="all">All</option>
+                        <option value="Partner">Partner</option>
+                        <option value="Offspring">Offspring</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <br>
+
+                  <div class="row justify-content-md-center">
+                    <input class="btn btn-primary my-2" id="btn2" type="submit" value="Submit">
+                  </div>
+                </form>
               </div>
-            </div>
-              <div class="row justify-content-md-center">
-                <div class="col-3">
-                  <select class="form-control" id="sample_type" name="sample_type">
-                    <option selected="true" value="all">All</option>
-                    <option class="unselected" value="skin">Skin</option>
-                    <option class="unselected" value="saliva">Saliva</option>
-                    <option class="unselected" value="stool">Stool</option>
-                  </select>
+
+              <div class="col-md-6"> 
+                <div id="res_jumbo" style="display: none;">
+                  <h2>Results</h2>
+                  <div id = "res_show"></div>        
                 </div>
               </div>
-
-              <div class="row justify-content-md-center question_margin">
-                <div class="col-3">
-                  <p>Role:</p>
-                </div>
-              </div>
-              <div class="row justify-content-md-center">
-                <div class="col-3">
-                  <select id="human_role" name = "human_role" class="form-control" required>
-                    <option selected="true" value="all">All</option>
-                    <option value="Partner">Partner</option>
-                    <option value="Offspring">Offspring</option>
-                  </select>
-                </div>
-              </div>
-
-            <!-- <div class="row justify-content-md-center question_margin">
-              <div class="col-3">
-                <p>Sex:</p>
-              </div>
-            </div>
-            <div class="row justify-content-md-center">
-              <div class="col-3">
-                <select class="form-control" id="id_sex">
-                  <option selected="true" disabled="disabled" value="sex_all">All</option>
-                  <option class="unselected" value="same-sex couple">Male</option>
-                  <option value="different sex couple">Female</option>
-                  <option value="sex_not_provided">Not provided</option>
-                </select>
-              </div>
-            </div> -->
-
-            <br>
-
-            <div class="row justify-content-md-center">
-              <input class="btn btn-primary my-2" id="btn2" type="submit" value="Submit">
-            </div>
-          </form>
+              
+            </row>
+          </div>
         </div>
-      </div>
+
+        
+
+        
 
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+        <!-- JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+        <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
-
-      <!-- JS -->
-      <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
-    </body>
-    </html>
+      </body>
+      </html>
