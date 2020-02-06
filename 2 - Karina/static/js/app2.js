@@ -1,9 +1,9 @@
-Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/master/2%20-%20Karina/beta_div_coords200_plotReady.csv', function(error, rows){
-
-   /* function unpack(rows, key) {
+Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/master/2%20-%20Karina/PCA_with_metadata.csv', function(error, rows){
+    console.log(rows)
+    function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
-    }/*
-/*
+    }
+
     var data = [{
         x: unpack(rows, 'PCoA-1'),
         y: unpack(rows, 'PCoA-2'),
@@ -12,15 +12,15 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
         type: 'scatter3d',
         marker: {
           color: 'rgb(23, 190, 207)',
-          size: 2
+          size: 6
         }
     },{
         alphahull: 7,
         opacity: 0.1,
         type: 'mesh3d',
-        x: unpack(rows, 'x'),
-        y: unpack(rows, 'y'),
-        z: unpack(rows, 'z')
+        x: unpack(rows, 'PCoA-1'),
+        y: unpack(rows, 'PCoA-2'),
+        z: unpack(rows, 'PCoA-3')
     }];
 
     var layout = {
@@ -51,21 +51,24 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
             },
             xaxis: {
                 type: 'linear',
+                title: "PCoA-1",
                 zeroline: false
             },
             yaxis: {
                 type: 'linear',
+                title: "PCoA-2",
                 zeroline: false
             },
             zaxis: {
                 type: 'linear',
+                title: "PCoA-3",
                 zeroline: false
             }
         },
-        title: '3d point clustering',
+        title: 'PCA clustering',
         width: 477
     };
 
     Plotly.newPlot('myDiv', data, layout);
-*/
+
 });
