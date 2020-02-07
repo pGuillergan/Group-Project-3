@@ -14,14 +14,17 @@ function show_results(data){
 
 // dog results
 	var lr_str = '<h4>Logistic Regression: ' + data.logisticRegression +'</h4>'+'<br>'
-	var rf_str = '<h4>Random Forest: ' + data.randomForest +'</h4>'+'<br>'
+  var rf_str = '<h4>Random Forest: ' + data.randomForest +'</h4>'+'<br>'
+  var nb_str = '<h4>Naive Bayes: ' + data.naiveBayes_dog +'</h4>'+'<br>'
 // human results
   var lr_str_hu = '<h4>Logistic Regression: ' + data.logisticRegression_human +'</h4>'+'<br>'
   var rf_str_hu = '<h4>Random Forest: ' + data.randomForest_human +'</h4>'+'<br>'
+  var nb_str_hu = '<h4>Naive Bayes: ' + data.naiveBayes_human +'</h4>'+'<br>'
+
  // get element for humans
-  document.getElementById("res_show_human").innerHTML=lr_str_hu+rf_str_hu;
+  document.getElementById("res_show_human").innerHTML=lr_str_hu+rf_str_hu+nb_str_hu;
   // get element for dogs
-	document.getElementById("res_show_dog").innerHTML=lr_str+rf_str;
+	document.getElementById("res_show_dog").innerHTML=lr_str+rf_str+nb_str;
 	document.getElementById("res_jumbo").style.display = "block";
 };
 

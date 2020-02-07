@@ -1,14 +1,14 @@
 var trace1 = {
     x: ['skin', 'saliva', 'stool'],
     y: [561.04, 176.50, 360.23],
-    name: 'Has Dog',
+    name: 'Dog owners',
     type: 'bar'
   };
   
   var trace2 = {
     x: ['skin', 'saliva', 'stool'],
     y: [453.19, 190.69, 336.64],
-    name: 'Does not have Dog',
+    name: 'Non-Dog Owners',
     type: 'bar'
   };
   
@@ -22,9 +22,9 @@ var trace1 = {
         title: "Sample Type",
       },
       yaxis: {
-        title: "Microbial Diversity",
+        title: "Avg. Microbial Diversity",
       },
-      title: 'Human with Dog'
+      title: 'Dog Owners vs. Non-dog Owners'
     };
   
   Plotly.newPlot('myDiv_3', data, layout);

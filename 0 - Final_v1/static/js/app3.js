@@ -8,6 +8,7 @@ var trace1 = {
   var trace2 = {
     x: ['skin', 'saliva', 'stool'],
     y: [488.87, 186.07, 344.60],
+    // color:'rgb(251,154,153)',
     name: 'Human',
     type: 'bar'
   };
@@ -22,7 +23,7 @@ var trace1 = {
         title: "Sample Type",
       },
       yaxis: {
-        title: "Microbial Diversity",
+        title: "Avg. Microbial Diversity",
       },
       title: 'Human vs Dog'
     };
