@@ -3,6 +3,25 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
     }
+    colors = []
+    for (i=0; i < unpack(rows, 'sample_type').length; i++) {
+      if (unpack(rows, 'sample_type')[i] == "skin") {
+        colors.push(0)
+      } else if (unpack(rows, 'sample_type')[i] == "stool") {
+        colors.push(0.5)
+      } else if (unpack(rows, 'sample_type')[i] == "saliva") {
+        colors.push(1)
+      }
+    }
+
+    var pl_colorscale=[
+        [0.0, '#19d3f3'],
+        [0.333, '#19d3f3'],
+        [0.333, '#a262a9'],
+        [0.666, '#a262a9'],
+        [0.666, '#636efa'],
+        [1, '#636efa']
+]
 
     var data = [{
         x: unpack(rows, 'PCoA-1'),
@@ -11,9 +30,11 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
         mode: 'markers',
         type: 'scatter3d',
         marker: {
-          color: 'rgb(23, 190, 207)',
-        //   color: 'rgb(23, 190, 207)',
-          size: 6
+          color: colors,
+        //   color: unpack(rows, 'sample_type'),
+          colorscale:pl_colorscale,
+            // color: 'rgb(23, 190, 207)',
+          size: 2
         }
     },{
         alphahull: 7,
@@ -25,6 +46,9 @@ Plotly.d3.csv('https://raw.githubusercontent.com/pGuillergan/Group-Project-3/mas
     }];
 
     var layout = {
+        // legend: {
+
+        // },
         autosize: true,
         height: 800,
         plot_bgcolor: 'rgba(0,0,0,0)',
